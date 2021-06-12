@@ -16,7 +16,8 @@ module.exports = (app) => {
     const dbStr = JSON.stringify(notesDB);
     fs.writeFileSync('db/db.json',dbStr, err => {
       if(err) console.log(err)
-    })
+    });
+    res.json(req.body.id);
   });
 
   // API POST Request - delete
@@ -26,6 +27,7 @@ module.exports = (app) => {
     const dbStr = JSON.stringify(notesDB);
     fs.writeFileSync('db/db.json',dbStr, err => {
       if(err) console.log(err)
-    }) 
+    }); 
+    res.json(req.body.id);
   });
 };
